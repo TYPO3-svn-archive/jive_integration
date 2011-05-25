@@ -1,0 +1,10 @@
+page.meta.jiveTitle = {page:title}
+page.meta.jiveTitle.insertData = 1
+page.meta.jiveDescription = {page:title}
+page.meta.jiveDescription.insertData = 1
+
+plugin.tx_jiveintegration = TEXT
+plugin.tx_jiveintegration {
+  value = {$plugin.tx_jiveintegration.jiveUrl}/{$plugin.tx_jiveintegration.jiveForumId}?key=t3_{TSFE:id}
+  wrap = <script type="text/javascript" src="|"></script>
+}

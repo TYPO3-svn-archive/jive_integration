@@ -1,0 +1,4 @@
+plugin.tx_jiveintegration {
+  jiveUrl = http://example.com/forums/communityjs/
+  jiveForumId = 2000
+}
