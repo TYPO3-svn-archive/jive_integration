@@ -1,0 +1,17 @@
+page.meta.jiveTitle = {page:title}
+page.meta.jiveTitle.insertData = 1
+page.meta.jiveDescription = {page:title}
+page.meta.jiveDescription.insertData = 1
+
+
+plugin.tx_jiveintegration_ce = USER
+plugin.tx_jiveintegration_ce {
+  userFunc = tx_JiveIntegration_CommunityEverywhere->main
+
+  settings {
+    jiveUrl = {$plugin.tx_jiveintegration.jiveUrl}
+    jiveCommunity = {$plugin.tx_jiveintegration.jiveForumId}
+    jiveCeMode = {$plugin.tx_jiveintegration.jiveCeMode}
+    jiveDiscussionIdent = 
+  }
+}

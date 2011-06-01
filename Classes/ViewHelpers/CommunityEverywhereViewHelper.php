@@ -16,9 +16,25 @@
 class Tx_JiveIntegration_ViewHelpers_CommunityEverywhereViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
 
 	/**
+	 * 
+	 * Enter description here ...
+	 * @param string $jiveUrl
+	 * @param integer $jiveCommunity
+	 * @param integer $ceMode
+	 * @param string $jiveDiscussionIdent
+	 * @param integer $jiveForumId
+	 * @author Daniel Regelein <daniel.regelein@diehl-informatik.de>
 	 */
-	public function render() {
+	public function render( $jiveUrl, $jiveCommunity, $ceMode='1804', $jiveDiscussionIdent=null, $jiveForumId=0 ) {
+		$ceApi = t3lib_div::makeInstance( 'Tx_JiveIntegration_CommunityEverywhere' );
+		
+		return $ceApi->renderCommunityEverwhereTag( 
+			$jiveUrl, 
+			$jiveCommunity, 
+			$ceMode, 
+			$jiveDiscussionIdent,
+			$jiveForumId 
+		);
 	}
 }
-
 ?>

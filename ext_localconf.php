@@ -8,16 +8,15 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['proc
 
 
 
-if( DONOTUSEEXTBASE ) {
-	t3lib_extMgm::addPItoST43( $_EXTKEY, 'Classes/CommunityEverywhere.php', 'communityeverywhere', 'list_type', 1 );
+if( !t3lib_extMgm::isLoaded( 'extbase' ) ) {
+	t3lib_extMgm::addPItoST43( 'jiveintegration', 'EXT:' . $_EXTKEY . '/Classes/CommunityEverywhere.php', '_ce', 'list_type', 1 );
 } else {
-	Tx_Extbase_Utility_Extension::configurePlugin(
-		$_EXTKEY,
-		'communityeverywhere',
-		array(
-			'File' => 'main',
-		)
-	);
+	#Tx_Extbase_Utility_Extension::configurePlugin(
+	#	$_EXTKEY,
+	#	'communityeverywhere',
+	#	array(
+	#		'CE' => 'main',
+	#	)
+	#);
 }
-
 ?>
